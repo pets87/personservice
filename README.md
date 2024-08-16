@@ -34,8 +34,10 @@ PersonService/
 Prerequisities:
  - dotnet 8.0.0 or newer must be installed. https://dotnet.microsoft.com/en-us/download
 
-Navigate to prpject root folder.
+Navigate to project root folder.
+
 Run command:
+
 `cmd> dotnet build`
 
 ## Run
@@ -52,7 +54,7 @@ No configuration
 Uses Entity Framework Core In-Memory database. 
 
 ## Test
-Navigate to prpject root folder.
+Navigate to project root folder.
 
 Run command:
 
