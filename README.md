@@ -82,7 +82,7 @@ Run test with coverage:
 
 Run report generator:
 
-`cmd> reportgenerator -reports:".\PersonService.Tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coverageresults" -reporttypes:Html`
+`cmd> reportgenerator -reports:".\PersonService.Tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coverage" -reporttypes:Html`
 
 Report will be create inside:
 
