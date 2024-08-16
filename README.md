@@ -40,7 +40,9 @@ Run command:
 
 ## Run
 Navigate to project PersonService/ folder.
+
 Run command:
+
 `cmd> dotnet run`
 
 Local OpenApi (Swagger) url: http://localhost:5053/swagger/index.html
@@ -51,7 +53,9 @@ Uses Entity Framework Core In-Memory database.
 
 ## Test
 Navigate to prpject root folder.
+
 Run command:
+
 `cmd> dotnet test`
 
 ## Test Coverage
