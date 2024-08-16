@@ -57,27 +57,36 @@ Run command:
 ## Test Coverage
 Prerequisities
 - dotnet-reportgenerator-globaltool must be installed globally
+
 Run command:
+
 `cmd> dotnet tool install -g dotnet-reportgenerator-globaltool`
  
 Run test with coverage:
+
 `cmd> dotnet test /p:CollectCoverage=true --collect:"XPlat Code Coverage"`
 
 Run report generator:
+
 `cmd> reportgenerator -reports:".\PersonService.Tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coverageresults" -reporttypes:Html`
 
 Report will be create inside:
+
 `.\PersonService.Tests\TestResults\Coverage\index.html`
 
 OR
 
 Naviagte to root folder.
 Run all at once:
+
 `cmd> test-with-coverage.bat`
-this will run all previous commands at once:
+
+This will run all previous commands at once:
 1. Install dotnet-reportgenerator-globaltool if not installed
 2. Run tests with coverage
 3. Generates report
+
 Report will be create inside:
+
 `.\PersonService.Tests\TestResults\Coverage\index.html`
 
