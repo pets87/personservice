@@ -5,6 +5,11 @@ Webservice for person specific operations.
 - SDK: 8.0.303 
 - Runtime: 8.0.7
 
+Swagger: https://personservice.azurewebsites.net/swagger/index.html
+
+Demo/Interactive test: https://personservice.azurewebsites.net/test
+
+
 # Project structure
 
 ```
