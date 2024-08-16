@@ -43,6 +43,9 @@ namespace PersonService.Services.Impl
                 throw new EntityNotFoundException($"Entity Not found with Id: {personDto.Id}");
             }
             var updatedPerson = mapper.Map<Person>(personDto);
+            updatedPerson.CreatedAt = person.CreatedAt; //PersonDto does not have BaseEntity fields, so assign separately
+            updatedPerson.UpdatedAt = person.UpdatedAt;
+            updatedPerson.UpdatedBy = person.UpdatedBy;
             context.Persons.Entry(person).CurrentValues.SetValues(updatedPerson);
             await context.SaveChangesAsync();
             return mapper.Map<PersonDto>(person);
@@ -66,7 +69,7 @@ namespace PersonService.Services.Impl
             var changedPersons = await context.Persons.Where(x => changedPersonIds.Contains(x.Id)).ToListAsync();
 
             var response = new PersonChangesResponseDto() { Changes = new List<PersonChangeListDto>() };
-            foreach (var person in changedPersons)
+            foreach (var person in changedPersons.OrderByDescending(x=>x.CreatedAt))
             {
                 var change = new PersonChangeListDto();
                 change.PersonChanges = new List<PersonChangeDto>();
@@ -81,7 +84,8 @@ namespace PersonService.Services.Impl
                     personChangeDto.ChangedBy = currentPersonChangeLog.ChangedBy;
                     personChangeDto.ChangedTime = currentPersonChangeLog.ChangeTime;
                     personChangeDto.ChangedValues = PersonUtils.GetChangedValues(currentPersonChangeLog.OldValue, currentPersonChangeLog.NewValue, personChangesRequest.ObservableParameters);
-                    change.PersonChanges.Add(personChangeDto);
+                    if(personChangeDto.ChangedValues.Any())
+                        change.PersonChanges.Add(personChangeDto);
                 }
                 if(change.PersonChanges.Any())
                     response.Changes.Add(change);

@@ -48,11 +48,11 @@ namespace PersonService.Utilities
                 if (observableParameters == null || !observableParameters.Any())
                 {
                     //if parameters are not specified, return all changes
-                    changedValues.Add(new PersonChangedValue(field.Key, null, newValue));
+                    changedValues.Add(new PersonChangedValue(field.Key, null, field.Value.ToString()));
                 }
                 else if (observableParameters.Exists(x => x.Equals(field.Key.ToString(), StringComparison.OrdinalIgnoreCase)))
                 {
-                    changedValues.Add(new PersonChangedValue(field.Key, null, newValue));
+                    changedValues.Add(new PersonChangedValue(field.Key, null, field.Value.ToString()));
                 }
             }
         }

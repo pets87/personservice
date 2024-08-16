@@ -23,7 +23,7 @@ namespace PersonService.Tests.Utilities
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual("FirstName", result[0].Field);
             Assert.AreEqual(null, result[0].OldValue);
-            Assert.AreEqual("{\"FirstName\":\"John\",\"LastName\":\"Doe\"}", result[0].NewValue);
+            Assert.AreEqual("John", result[0].NewValue);
         }
 
         [TestMethod]
@@ -87,10 +87,10 @@ namespace PersonService.Tests.Utilities
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual("FirstName", result[0].Field);
             Assert.AreEqual(null, result[0].OldValue);
-            Assert.AreEqual("{\"FirstName\":\"John\",\"LastName\":\"Doe\"}", result[0].NewValue);
+            Assert.AreEqual("John", result[0].NewValue);
             Assert.AreEqual("LastName", result[1].Field);
             Assert.AreEqual(null, result[1].OldValue);
-            Assert.AreEqual("{\"FirstName\":\"John\",\"LastName\":\"Doe\"}", result[1].NewValue);
+            Assert.AreEqual("Doe", result[1].NewValue);
         }
 
         [TestMethod]
