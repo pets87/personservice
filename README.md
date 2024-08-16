@@ -51,6 +51,7 @@ Local OpenApi (Swagger) url: http://localhost:5053/swagger/index.html
 
 ## Configuration
 No configuration 
+
 Uses Entity Framework Core In-Memory database. 
 
 ## Test
