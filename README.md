@@ -65,6 +65,8 @@ Run command:
 Prerequisities
 - dotnet-reportgenerator-globaltool must be installed globally
 
+**Manual report generation**
+
 Run command:
 
 `cmd> dotnet tool install -g dotnet-reportgenerator-globaltool`
@@ -81,7 +83,8 @@ Report will be create inside:
 
 `.\PersonService.Tests\TestResults\Coverage\index.html`
 
-OR
+
+**Automatic report generation**
 
 Naviagte to root folder.
 Run all at once:
