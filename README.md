@@ -105,3 +105,18 @@ Report will be create inside:
 
 `.\PersonService.Tests\TestResults\Coverage\index.html`
 
+
+## Load tests
+
+**RUN WITH DOCKER**
+Doc: https://k6.io/docs/getting-started/running-k6/
+
+Navigate to PersonService.LoadTests folder.
+
+Run script:
+
+`cmd> docker pull grafana/k6`
+
+`cmd> docker run --rm -i grafana/k6 run - <script.js`
+
+If you are running PersonService locally, then baseUrl must be `http://host.docker.internal:8080`
